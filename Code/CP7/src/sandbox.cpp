@@ -1,4 +1,3 @@
-#pragma once
 #include "camera.hpp"
 #include "cutter.hpp"
 #include "shader.hpp"

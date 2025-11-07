@@ -76,7 +76,7 @@ int main()
     unsigned int shaderProgram = Utils::createShaderProgram("shaders/vertex.glsl", "shaders/fragment.glsl");
 
     // 加载纹理
-    unsigned int texture = Utils::loadTexture("../../../CP2/resources/1.jpg");
+    unsigned int texture = Utils::loadTexture("./resources/1.jpg");
 
     // 立方体顶点数据（位置和纹理坐标）
     float vertices[] = {// 位置              // 纹理坐标

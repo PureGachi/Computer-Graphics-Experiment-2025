@@ -30,10 +30,18 @@ if(WIN32)
     target_link_libraries(HelloCube opengl32)
 endif()
 
-# 复制着色器文件到构建目录（多配置生成器）
+# 复制着色器文件到构建目录(多配置生成器)
 add_custom_command(TARGET HelloCube POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory
     ${CMAKE_CURRENT_SOURCE_DIR}/src/shaders
     $<TARGET_FILE_DIR:HelloCube>/shaders
     COMMENT "Copying shaders to build directory"
+)
+
+# 复制资源文件到构建目录
+add_custom_command(TARGET HelloCube POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    ${CMAKE_CURRENT_SOURCE_DIR}/resources
+    $<TARGET_FILE_DIR:HelloCube>/resources
+    COMMENT "Copying resources to build directory"
 )
